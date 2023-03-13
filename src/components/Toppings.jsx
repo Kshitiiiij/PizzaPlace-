@@ -21,6 +21,18 @@ const Toppings = ({ addTopping, pizza }) => {
     }
   }
 
+  const buttonVaraint = {
+    hover: {
+      scale: [1.1, 1, 1.1, 1, 1.1],
+        textShadow: "0px 0px 8px rgb(255, 255, 255)",
+        boxShadow: "0px 0px 8px rgb(255, 255, 255)",
+        transition: {
+          repeat: Infinity,
+          duration: .8
+        }
+      }
+  }
+
   return (
     <motion.div className="toppings container"
     variants={containerVarianats}
@@ -45,11 +57,8 @@ const Toppings = ({ addTopping, pizza }) => {
 
       <Link to="/order">
         <motion.button
-          whileHover={{
-            scale: 1.1,
-            textShadow: "0px 0px 8px rgb(255, 255, 255)",
-            boxShadow: "0px 0px 8px rgb(255, 255, 255)"
-          }}
+        variants={buttonVaraint}
+        whileHover='hover'
         >
           Order
         </motion.button>
